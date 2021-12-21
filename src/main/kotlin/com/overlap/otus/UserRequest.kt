@@ -1,7 +1,6 @@
-package com.example.demo
+package com.overlap.otus
 
-data class User(
-    val id: Int,
+data class UserRequest(
     val login: String,
     val password: String,
     val firstName: String,

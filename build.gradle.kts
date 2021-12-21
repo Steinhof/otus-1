@@ -8,7 +8,7 @@ plugins {
 	id("nu.studer.jooq") version "6.0.1"
 }
 
-group = "com.example"
+group = "com.overlap"
 version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
@@ -43,6 +43,7 @@ tasks.withType<KotlinCompile> {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "17"
 	}
+	dependsOn("generateJooq")
 }
 
 jooq {

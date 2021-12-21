@@ -1,11 +1,11 @@
-package com.example.demo
+package com.overlap.otus
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class DemoApplication
+class OtusApplication
 
 fun main(args: Array<String>) {
-	runApplication<DemoApplication>(*args)
+	runApplication<OtusApplication>(*args)
 }

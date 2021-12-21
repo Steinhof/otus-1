@@ -1,4 +1,4 @@
-package com.example.demo
+package com.overlap.otus
 
 import java.security.Principal
 import org.springframework.stereotype.Controller

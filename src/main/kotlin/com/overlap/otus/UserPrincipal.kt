@@ -1,4 +1,4 @@
-package com.example.demo
+package com.overlap.otus
 
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails

@@ -1,4 +1,4 @@
-package com.example.demo
+package com.overlap.otus
 
 import com.example.otus.database.Tables.USER
 import com.fasterxml.jackson.databind.ObjectMapper
