@@ -7,7 +7,7 @@ steps:
     name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
     entrypoint: gcloud
     args: [ "run", "deploy", "otus",
-            "--image", "europe-north1-docker.pkg.dev/$PROJECT_ID/overlap/$REPO_NAME:latest",
+            "--image", "europe-north1-docker.pkg.dev/$PROJECT_ID/overlap/otus:latest",
             "--region", "europe-west1",
             "--allow-unauthenticated"
     ]
