@@ -22,4 +22,3 @@ class UserService(
         return users.findByLogin(login)
     }
 }
-

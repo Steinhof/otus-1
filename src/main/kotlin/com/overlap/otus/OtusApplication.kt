@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class OtusApplication
 
 fun main(args: Array<String>) {
-	runApplication<OtusApplication>(*args)
+    runApplication<OtusApplication>(*args)
 }

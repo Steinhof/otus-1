@@ -9,7 +9,6 @@ import org.springframework.security.config.web.server.ServerHttpSecurity
 import org.springframework.security.crypto.password.NoOpPasswordEncoder
 import org.springframework.security.web.server.SecurityWebFilterChain
 
-
 @Configuration
 @EnableWebFluxSecurity
 class SecurityConfig(private val userDetailsService: UserDetailsService) {

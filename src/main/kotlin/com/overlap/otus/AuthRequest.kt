@@ -29,6 +29,5 @@ data class AuthRequest(private val user: UserRequest) : Authentication {
     }
 
     override fun setAuthenticated(isAuthenticated: Boolean) {
-
     }
 }

@@ -1,9 +1,9 @@
 package com.overlap.otus
 
 import org.springframework.security.core.userdetails.ReactiveUserDetailsService
+import org.springframework.security.core.userdetails.User
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UsernameNotFoundException
-import org.springframework.security.core.userdetails.User
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Mono
 
@@ -13,11 +13,13 @@ class UserDetailsService(private val users: UsersRepository) : ReactiveUserDetai
     override fun findByUsername(username: String): Mono<UserDetails> {
         val user = users.findByLogin(username) ?: throw UsernameNotFoundException("No user found with login: $username")
 
-        return Mono.just(User(
-            user.login,
-            user.password,
-            listOf()
-        ))
+        return Mono.just(
+            User(
+                user.login,
+                user.password,
+                listOf()
+            )
+        )
     }
 
 //    private fun getAuthorities(roles: List<String>): List<GrantedAuthority>? {

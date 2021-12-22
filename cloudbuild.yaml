@@ -1,0 +1,15 @@
+steps:
+  - id: build
+    name: gradle:alpine
+    entrypoint: gradle
+    args: [ "jib" ]
+  - id: deploy
+    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
+    entrypoint: gcloud
+    args: [ "run", "deploy", "otus",
+            "--image", "europe-north1-docker.pkg.dev/$PROJECT_ID/overlap/$REPO_NAME:latest",
+            "--region", "europe-west1",
+            "--no-cpu-throttling"
+    ]
+tags:
+  [ otus ]

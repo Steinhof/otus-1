@@ -1,12 +1,10 @@
 package com.overlap.otus
 
-import java.security.Principal
 import org.springframework.stereotype.Controller
+import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.ResponseBody
-import org.springframework.ui.Model
-
+import java.security.Principal
 
 @Controller
 class UserController(private val userService: UserService) {

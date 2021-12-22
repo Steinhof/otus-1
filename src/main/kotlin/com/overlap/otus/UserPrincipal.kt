@@ -32,5 +32,4 @@ class UserPrincipal : UserDetails {
     override fun isEnabled(): Boolean {
         TODO("Not yet implemented")
     }
-
 }
