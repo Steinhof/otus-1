@@ -1,1 +1,1 @@
-rootProject.name = "otus-1"
+rootProject.name = "otus"
