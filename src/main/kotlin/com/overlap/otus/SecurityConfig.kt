@@ -6,25 +6,21 @@ import org.springframework.security.authentication.ReactiveAuthenticationManager
 import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity
 import org.springframework.security.config.web.server.ServerHttpSecurity
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.NoOpPasswordEncoder
-import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.server.SecurityWebFilterChain
 
 
 @Configuration
 @EnableWebFluxSecurity
-class SecurityConfig(private val authenticationService: AuthenticationService) {
+class SecurityConfig(private val userDetailsService: UserDetailsService) {
 
     @Bean
     fun securityFilterChain(http: ServerHttpSecurity): SecurityWebFilterChain {
         return http
             .csrf().disable()
             .authorizeExchange()
-            .pathMatchers("/signup").permitAll()
+            .pathMatchers("/signup", "/static").permitAll()
             .anyExchange().authenticated()
-            .and()
-            .httpBasic()
             .and()
             .formLogin()
             .and()
@@ -33,7 +29,7 @@ class SecurityConfig(private val authenticationService: AuthenticationService) {
 
     @Bean
     fun authenticationManager(): ReactiveAuthenticationManager {
-        val authenticationManager = UserDetailsRepositoryReactiveAuthenticationManager(authenticationService)
+        val authenticationManager = UserDetailsRepositoryReactiveAuthenticationManager(userDetailsService)
         authenticationManager.setPasswordEncoder(NoOpPasswordEncoder.getInstance())
 
         return authenticationManager

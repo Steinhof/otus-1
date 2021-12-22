@@ -25,6 +25,7 @@ public class User implements Serializable {
     private final JSON    interests;
     private final String  city;
     private final String  password;
+    private final String  gender;
 
     public User(User value) {
         this.id = value.id;
@@ -35,6 +36,7 @@ public class User implements Serializable {
         this.interests = value.interests;
         this.city = value.city;
         this.password = value.password;
+        this.gender = value.gender;
     }
 
     public User(
@@ -45,7 +47,8 @@ public class User implements Serializable {
         Integer age,
         JSON    interests,
         String  city,
-        String  password
+        String  password,
+        String  gender
     ) {
         this.id = id;
         this.login = login;
@@ -55,6 +58,7 @@ public class User implements Serializable {
         this.interests = interests;
         this.city = city;
         this.password = password;
+        this.gender = gender;
     }
 
     /**
@@ -113,6 +117,13 @@ public class User implements Serializable {
         return this.password;
     }
 
+    /**
+     * Getter for <code>otus.user.gender</code>.
+     */
+    public String getGender() {
+        return this.gender;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("User (");
@@ -125,6 +136,7 @@ public class User implements Serializable {
         sb.append(", ").append(interests);
         sb.append(", ").append(city);
         sb.append(", ").append(password);
+        sb.append(", ").append(gender);
 
         sb.append(")");
         return sb.toString();

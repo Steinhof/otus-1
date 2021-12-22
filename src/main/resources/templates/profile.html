@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Profile</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+</head>
+<body>
+
+<h1>Profile</h1>
+
+<h3 th:text="${user.firstName + ' ' + user.lastName}"></h3>
+<ul>
+    <li th:text="${user.age}"></li>
+    <li th:text="${user.gender}"></li>
+    <li th:text="${user.interests}"></li>
+    <li th:text="${user.city}"></li>
+</ul>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ data class UserRequest(
     val firstName: String,
     val lastName: String,
     val age: Int,
-    val gender: Int,
+    val gender: String,
     val interests: List<String>,
     val city: String
 )

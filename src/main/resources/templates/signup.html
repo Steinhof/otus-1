@@ -1,24 +1,52 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <title>Registration</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
 </head>
 <body>
 
 <h1>Registration</h1>
-<!--<h2 th:utext="${message}">..!..</h2>-->
 
-<!--
+<form class="signup-form" action="/signup" method="post">
+    <fieldset>
+        <label>
+            <input type="text" placeholder="Логин" name="login">
+        </label>
 
-   In Thymeleaf the equivalent of
-   JSP's ${pageContext.request.contextPath}/edit.html
-   would be @{/edit.html}
+        <label>
+            <input type="password" placeholder="Пароль" name="password">
+        </label>
 
-   -->
+        <label>
+            <input type="text" placeholder="Имя" name="firstName">
+        </label>
 
-<!--<a th:href="@{/personList}">Person List</a>-->
+        <label>
+            <input type="text" placeholder="Фамилия" name="lastName">
+        </label>
 
+        <label>
+            <input type="number" placeholder="Возраст" name="age">
+        </label>
+
+        <label>
+            <input type="text" placeholder="Пол" name="gender">
+        </label>
+
+        <label>
+            <input type="text" placeholder="Интересы" name="interests">
+        </label>
+
+        <label>
+            <input type="text" placeholder="Город" name="city">
+        </label>
+
+        <button class="signup-form__button" type="submit">Зарегистрироваться</button>
+    </fieldset>
+</form>
+
+<script th:src="@{/script.js}"></script>
 </body>
-
 </html>

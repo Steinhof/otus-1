@@ -35,6 +35,7 @@ dependencies {
 	jooqGenerator("mysql:mysql-connector-java")
 	runtimeOnly("mysql:mysql-connector-java")
 	implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
+	implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
 	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
 

@@ -1,15 +1,25 @@
 package com.overlap.otus
 
+import org.springframework.security.authentication.ReactiveAuthenticationManager
 import org.springframework.stereotype.Service
 
 @Service
-class UserService(private val users: UsersRepository) {
+class UserService(
+    private val users: UsersRepository,
+    private val authenticationManager: ReactiveAuthenticationManager
+) {
 
-    fun signup(userRequest: UserRequest): User? {
+    fun register(userRequest: UserRequest) {
         if (users.isExists(userRequest.login)) {
-            return null
+            authenticationManager.authenticate(AuthRequest(userRequest)).subscribe()
+        } else {
+            users.save(userRequest)
+            authenticationManager.authenticate(AuthRequest(userRequest)).subscribe()
         }
+    }
 
-        return users.save(userRequest)
+    fun getUser(login: String): User? {
+        return users.findByLogin(login)
     }
 }
+

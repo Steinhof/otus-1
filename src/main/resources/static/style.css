@@ -1,0 +1,17 @@
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.signup-form label {
+    display: block;
+    margin-bottom: 2vh;
+    text-align: left;
+}
+
+.signup-form__button {
+    display: block;
+    box-sizing: border-box;
+    width: fit-content;
+}
