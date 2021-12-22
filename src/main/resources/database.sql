@@ -1,4 +1,4 @@
-create table user
+create table otus.user
 (
     id         int auto_increment
         primary key,

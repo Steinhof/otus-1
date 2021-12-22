@@ -55,9 +55,9 @@ jooq {
             jooqConfiguration.apply {
                 logging = org.jooq.meta.jaxb.Logging.WARN
                 jdbc.apply {
-                    url = "jdbc:mysql://localhost:3306/otus"
-                    user = "root"
-                    password = "root"
+                    url = "jdbc:mysql://35.228.94.73:3306/otus"
+                    user = "otus"
+                    password = "pBOJDlBja1Gkus7O"
                 }
                 generator.apply {
                     name = "org.jooq.codegen.DefaultGenerator"

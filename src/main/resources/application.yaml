@@ -1,5 +1,5 @@
 spring:
   datasource:
-    username: root
-    password: root
-    url: jdbc:mysql://localhost:3306/otus
+    username: otus
+    password: pBOJDlBja1Gkus7O
+    url: jdbc:mysql://35.228.94.73:3306/otus

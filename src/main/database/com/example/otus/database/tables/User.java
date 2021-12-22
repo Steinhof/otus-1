@@ -17,7 +17,7 @@ import org.jooq.Identity;
 import org.jooq.JSON;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row9;
+import org.jooq.Row8;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -88,11 +88,6 @@ public class User extends TableImpl<UserRecord> {
      * The column <code>otus.user.password</code>.
      */
     public final TableField<UserRecord, String> PASSWORD = createField(DSL.name("password"), SQLDataType.VARCHAR(255).nullable(false), this, "");
-
-    /**
-     * The column <code>otus.user.gender</code>.
-     */
-    public final TableField<UserRecord, String> GENDER = createField(DSL.name("gender"), SQLDataType.VARCHAR(255).nullable(false), this, "");
 
     private User(Name alias, Table<UserRecord> aliased) {
         this(alias, aliased, null);
@@ -174,11 +169,11 @@ public class User extends TableImpl<UserRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row9 type methods
+    // Row8 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row9<Integer, String, String, String, Integer, JSON, String, String, String> fieldsRow() {
-        return (Row9) super.fieldsRow();
+    public Row8<Integer, String, String, String, Integer, JSON, String, String> fieldsRow() {
+        return (Row8) super.fieldsRow();
     }
 }
