@@ -9,7 +9,7 @@ steps:
     args: [ "run", "deploy", "otus",
             "--image", "europe-north1-docker.pkg.dev/$PROJECT_ID/overlap/$REPO_NAME:latest",
             "--region", "europe-west1",
-            "--no-cpu-throttling"
+            "--allow-unauthenticated"
     ]
 tags:
   [ otus ]
