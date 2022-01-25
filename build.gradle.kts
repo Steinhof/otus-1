@@ -1,13 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.6.1"
+    id("org.springframework.boot") version "2.6.3"
     id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm") version "1.6.0"
-    kotlin("plugin.spring") version "1.6.0"
+    kotlin("jvm") version "1.6.10"
+    kotlin("plugin.spring") version "1.6.10"
     id("nu.studer.jooq") version "6.0.1"
     id("org.jlleitschuh.gradle.ktlint") version "10.2.0"
-    id("com.google.cloud.tools.jib") version "3.1.4"
+    id("com.google.cloud.tools.jib") version "3.2.0"
 }
 
 group = "com.overlap"
@@ -36,7 +36,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     jooqGenerator("mysql:mysql-connector-java")
     runtimeOnly("mysql:mysql-connector-java")
-    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
     implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
