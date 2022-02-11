@@ -34,8 +34,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    implementation("io.github.serpro69:kotlin-faker:1.9.0")
     jooqGenerator("mysql:mysql-connector-java")
     runtimeOnly("mysql:mysql-connector-java")
+    runtimeOnly("dev.miku:r2dbc-mysql")
     implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }
@@ -54,8 +56,8 @@ jooq {
             jooqConfiguration.apply {
                 logging = org.jooq.meta.jaxb.Logging.WARN
                 jdbc.apply {
-                    url = "jdbc:mysql://35.228.94.73:3306/otus"
-                    user = "otus"
+                    url = "jdbc:mysql://34.88.134.28:3306/otus"
+                    user = "root"
                     password = "pBOJDlBja1Gkus7O"
                 }
                 generator.apply {

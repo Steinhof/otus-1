@@ -2,6 +2,7 @@ package com.overlap.otus
 
 import org.springframework.security.authentication.ReactiveAuthenticationManager
 import org.springframework.stereotype.Service
+import reactor.core.publisher.Flux
 
 @Service
 class UserService(
@@ -18,7 +19,9 @@ class UserService(
         }
     }
 
-    fun getUser(login: String): User? {
-        return users.findByLogin(login)
-    }
+    fun getUser(login: String): User? =
+        users.findByLogin(login)
+
+    fun getUsers(firstName: String, lastName: String): List<User> =
+        users.findAll(firstName, lastName)
 }

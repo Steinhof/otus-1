@@ -1,7 +1,7 @@
 spring:
   datasource:
-    username: otus
+    url: jdbc:mysql://34.88.134.28:3306/otus
+    username: root
     password: pBOJDlBja1Gkus7O
-    url: jdbc:mysql://35.228.94.73:3306/otus
   mvc:
     static-path-pattern: /public/**

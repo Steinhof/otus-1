@@ -1,6 +1,7 @@
 create table otus.user
 (
-    id         int generated always as        primary key,    login      varchar(255) not null,
+    id         int auto_increment primary key,
+    login      varchar(255) not null,
     first_name varchar(255) not null,
     last_name  varchar(255) not null,
     age        int          not null,
@@ -13,4 +14,3 @@ create table otus.user
     constraint user_login_uindex
         unique (login)
 );
-

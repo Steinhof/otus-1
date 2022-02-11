@@ -26,5 +26,4 @@ public class Keys {
 
     public static final UniqueKey<UserRecord> KEY_USER_PRIMARY = Internal.createUniqueKey(User.USER, DSL.name("KEY_user_PRIMARY"), new TableField[] { User.USER.ID }, true);
     public static final UniqueKey<UserRecord> KEY_USER_USER_ID_UINDEX = Internal.createUniqueKey(User.USER, DSL.name("KEY_user_user_id_uindex"), new TableField[] { User.USER.ID }, true);
-    public static final UniqueKey<UserRecord> KEY_USER_USER_LOGIN_UINDEX = Internal.createUniqueKey(User.USER, DSL.name("KEY_user_user_login_uindex"), new TableField[] { User.USER.LOGIN }, true);
 }
