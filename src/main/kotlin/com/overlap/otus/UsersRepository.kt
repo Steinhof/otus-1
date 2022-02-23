@@ -31,10 +31,7 @@ class UsersRepository(private val dsl: DSLContext, private val objectMapper: Obj
         return dsl
             .select()
             .from(USER)
-            .where(
-                USER.FIRST_NAME.startsWithIgnoreCase(firstName)
-                    .and(USER.LAST_NAME.startsWithIgnoreCase(lastName))
-            )
+            .where(USER.FIRST_NAME.like("$firstName%").and(USER.LAST_NAME.like("$lastName%")))
             .fetchInto(User::class.java)
     }
 

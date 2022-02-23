@@ -5,3 +5,13 @@ spring:
     password: postgres
   mvc:
     static-path-pattern: /public/**
+
+#logging:
+#  level:
+#    org:
+#      jooq: DEBUG
+#      springframework:
+#        jdbc:
+#          core:
+#            JdbcTemplate: DEBUG
+#            StatementCreatorUtils: TRACE

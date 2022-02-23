@@ -169,11 +169,6 @@
           </ResultCollector>
           <hashTree/>
         </hashTree>
-        <SyncTimer guiclass="TestBeanGUI" testclass="SyncTimer" testname="Synchronizing Timer" enabled="false">
-          <intProp name="groupSize">10</intProp>
-          <longProp name="timeoutInMs">0</longProp>
-        </SyncTimer>
-        <hashTree/>
       </hashTree>
     </hashTree>
   </hashTree>
