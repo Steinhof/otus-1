@@ -18,7 +18,7 @@ class SecurityConfig(private val userDetailsService: UserDetailsService) {
         return http
             .csrf().disable()
             .authorizeExchange()
-            .pathMatchers("/signup", "/public/**").permitAll()
+            .pathMatchers("/signup", "/users", "/public/**").permitAll()
             .anyExchange().authenticated()
             .and()
             .formLogin()

@@ -1,12 +1,10 @@
 package com.overlap.otus
 
-import com.example.otus.database.Tables.USER
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.jooq.DSLContext
 import org.jooq.JSON
+import org.jooq.generated.Tables.USER
 import org.springframework.stereotype.Repository
-import reactor.core.publisher.Flux
-import reactor.kotlin.core.publisher.toFlux
 
 @Repository
 class UsersRepository(private val dsl: DSLContext, private val objectMapper: ObjectMapper) {
@@ -33,7 +31,10 @@ class UsersRepository(private val dsl: DSLContext, private val objectMapper: Obj
         return dsl
             .select()
             .from(USER)
-            .where(USER.FIRST_NAME.like(firstName).and(USER.LAST_NAME.like(lastName)))
+            .where(
+                USER.FIRST_NAME.startsWithIgnoreCase(firstName)
+                    .and(USER.LAST_NAME.startsWithIgnoreCase(lastName))
+            )
             .fetchInto(User::class.java)
     }
 

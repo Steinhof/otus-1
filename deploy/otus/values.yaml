@@ -1,0 +1,8 @@
+mysql:
+  auth:
+    database: otus
+    username: postgres
+    password: postgres
+  primary:
+    service:
+      type: LoadBalancer

@@ -8,6 +8,6 @@ data class User(
     val lastName: String,
     val age: Int,
     val gender: String,
-    val interests: List<String>,
+    val interests: List<String>? = listOf(),
     val city: String
 )

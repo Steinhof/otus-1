@@ -34,7 +34,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-    implementation("io.github.serpro69:kotlin-faker:1.9.0")
+    developmentOnly( "org.springframework.boot:spring-boot-devtools")
     jooqGenerator("mysql:mysql-connector-java")
     runtimeOnly("mysql:mysql-connector-java")
     runtimeOnly("dev.miku:r2dbc-mysql")
@@ -56,9 +56,9 @@ jooq {
             jooqConfiguration.apply {
                 logging = org.jooq.meta.jaxb.Logging.WARN
                 jdbc.apply {
-                    url = "jdbc:mysql://34.88.134.28:3306/otus"
-                    user = "root"
-                    password = "pBOJDlBja1Gkus7O"
+                    url = "jdbc:mysql://10.98.56.125:3306/otus"
+                    user = "postgres"
+                    password = "postgres"
                 }
                 generator.apply {
                     name = "org.jooq.codegen.DefaultGenerator"
@@ -72,8 +72,7 @@ jooq {
                         isFluentSetters = true
                     }
                     target.apply {
-                        packageName = "com.example.otus.database"
-                        directory = "src/main/database"
+                        directory = "src/main/java"
                     }
                     strategy.name = "org.jooq.codegen.DefaultGeneratorStrategy"
                 }
@@ -84,7 +83,7 @@ jooq {
 
 jib {
     to {
-        image = "europe-north1-docker.pkg.dev/overlap-332908/overlap/otus:latest"
+        image = "overlapsa/otus"
         tags = setOf("latest")
     }
     from {
